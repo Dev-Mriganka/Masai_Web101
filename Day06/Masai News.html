@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <title>Masai News</title>
+    <style>
+        #container {
+            width: 65%;
+            margin: auto;
+        }
+
+        #container>div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+        }
+
+        #news>div {
+            width: 94%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        #news>div>div {
+            width:33%;
+            margin: 0px 30px;
+            padding: 10px 27px; 
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            border-radius: 15px
+        }
+
+        #news>div>div:hover {
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        #news>div>div>img{
+            width: 100%;
+            height: 170px;
+        }
+        img+p{
+            color: blue;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 32px;
+            letter-spacing: -1px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        button {
+            margin: 23px auto 60px;
+            padding: 12px ;
+            border-radius: 8px;
+            font-size: 12px;
+            color: #EE5531;
+            border: 1px solid #FD91A7;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: .3px;
+            line-height: 20px;
+        }
+
+        h4 {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 17px;
+            font-weight: 700;
+            letter-spacing: -.3px;
+            line-height: 25px;
+            margin: 0px auto;
+        }
+
+        #investor>div:nth-child(2) {
+            width: 94%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #investor>div>div {
+            width: 33%;
+            margin: auto;
+            margin: 15px;
+        }
+
+        #investor>div>div>img {
+            width: 100%;
+        }
+        #div {
+        margin-left: 5px;
+        padding: 2.7px;
+        border: solid #EE5531;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        transition: all .3s ease;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="news">
+            <div style="margin-bottom: 30px;">
+                <h1>Masai In The News</h1>
+            </div>
+            <div>
+                <div>
+                    <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/ET_3754cc10ec.png">
+                    <p>
+                        21 Dec 2021
+                    </p>
+                    <h4>Edtech startup Masai School
+                        acquires data analytics firm
+                        Prepleaf for$1million.
+                    </h4>
+                    <p>
+                        With their latest acquisition,Masai
+                        moves one step closer to becoming ...
+                    </p>
+                </div>
+                <div>
+                    <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/money_Control_c3e25f5ceb.png">
+                    <p>
+                        26 Oct 2021
+                    </p>
+                    <h4>Kunal Shah,Vijay Shekhar
+                        Sharma,Amrish Rau among 21
+                        angel investors in Masai School
+                    </h4>
+                    <p>
+                        Masai School is aiming to expand to 20
+                        smaller cities by March 2022 and ...
+                    </p>
+                </div>
+                <div>
+                    <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/vccircle_6ef779c958.png">
+                    <p>
+                        18 Aug 2020
+                    </p>
+                    <h4>Unitus Ventures leads pre
+                        SeriesAfunding for coding
+                        focussed Masai School
+                    </h4>
+                    <p>
+                        Software coding platform Masai School
+                        has raised$2.5 million(Rs 18.6 crore)i...
+                    </p>
+                </div>
+            </div>
+            <div style="margin-top: 17px;">
+                <button type="button">SEE MORE <span id="div"></span></button>
+            </div>
+        </div>
+
+        <div id="investor">
+            <div>
+                <h1>Our Investors, Who Believe In Us</h1>
+            </div>
+            <div>
+                <div>
+                    <img src="https://www.masaischool.com/img/our-investors/unitus.svg">
+                </div>
+                <div>
+                    <img src="https://www.masaischool.com/img/our-investors/omidyar.svg">
+                </div>
+                <div>
+                    <img src="https://www.masaischool.com/img/our-investors/indiaQuotient.svg">
+                </div>
+            </div>
+            <div>
+                <button type="button">SEE MORE INVESTORS<span id="div"></span></button>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
