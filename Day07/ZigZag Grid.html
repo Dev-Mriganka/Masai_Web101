@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zigzag Grid</title>
+    <style>
+        #container {
+            width: 40%;
+            margin: 50px auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 150px);
+            gap: 30px 45px;
+            grid-template-areas:
+                "aa bb bb cc"
+                "dd dd ee ff"
+                "gg hh ii ii"
+        }
+
+        #container div {
+            border-radius: 7px;
+            background-color: #217966;
+            font-size: 45px;
+            color: white;
+            padding: 45px 40px;
+        }
+
+        #container>div:nth-child(1) {
+            grid-area: aa;
+                /* label - name */
+        }
+
+        #container>div:nth-child(2) {
+            grid-area: bb;
+                /* label - name */
+        }
+
+        #container>div:nth-child(3) {
+            grid-area: cc;
+        }
+
+        #container>div:nth-child(4) {
+            grid-area: dd;
+            padding: 0px 15px;
+        }
+
+        #container>div:nth-child(5) {
+            grid-area: ee;
+        }
+
+        #container>div:nth-child(6) {
+            grid-area: ff;
+        }
+
+        #container>div:nth-child(7) {
+            grid-area: gg;
+        }
+
+        #container>div:nth-child(8) {
+            grid-area: hh;
+        }
+
+        #container>div:nth-child(9) {
+            grid-area: ii;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid 2</title>
+    <style>
+        #container {
+            width: 45%;
+            margin: 50px auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 150px);
+            gap: 20px 20px;
+            grid-template-areas:
+                "aa aa bb ee"
+                "cc dd bb ee"
+        }
+
+        #container div {
+            border-radius: 10px;
+            background-color: #454445;
+            font-size: 45px;
+            color: white;
+            padding: 45px 40px;
+        }
+
+        #container>div:nth-child(1) {
+            grid-area: aa;
+                /* label - name */
+        }
+
+        #container>div:nth-child(2) {
+            grid-area: bb;
+                /* label - name */
+        }
+
+        #container>div:nth-child(3) {
+            grid-area: cc;
+        }
+
+        #container>div:nth-child(4) {
+            grid-area: dd;
+        }
+
+        #container>div:nth-child(5) {
+            grid-area: ee;
+            height: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+        <div>E</div>
+    </div>
+</body>
+
+</html>

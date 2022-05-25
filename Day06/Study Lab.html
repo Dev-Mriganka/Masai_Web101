@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;800;900&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/00b3499e31.js" crossorigin="anonymous"></script>
+    <title>Study Lab</title>
+    <style>
+        #navbar {
+            width: 60%;
+            margin: auto;
+            height: 55px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 100px;
+        }
+
+        #navbar>div {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        #navbar>div:first-child {
+            width: 14%;
+            height: 100%;
+
+        }
+
+        #navbar>div>h4 {
+            width: 150px;
+            background: rgb(200, 77, 232);
+            background: linear-gradient(90deg, rgba(200, 77, 232, 1) 0%, rgba(130, 96, 230, 1) 45%, rgba(42, 121, 229, 1) 100%);
+            color: white;
+            text-align: center;
+            margin: 0px;
+            padding: 15px 20px;
+            font-size: 30px;
+            font-weight: 600;
+        }
+
+        #navbar>div:last-child {
+            width: 50%;
+            display: flex;
+            justify-content: space-around;
+            font-size: 15px;
+            letter-spacing: 1.7px;
+            font-weight: 600;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        #navbar p {
+            color: #000;
+        }
+
+        #navbar>div>p:hover {
+            color: #EF0330;
+        }
+
+        .active {
+            color: #EF0330;
+        }
+
+        p {
+            font-family: 'Poppins', sans-serif;
+            color: #9B9B9A;
+        }
+
+        h2 {
+            font-size: 35px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: #323332;
+            margin-top: 0px;
+        }
+        h3 {
+        font-size: 18px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        color: #323332;
+        margin-top: 0px;
+        }
+        h4 {
+            font-size: 18px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+        }
+
+        span {
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: #689BFD;
+        }
+
+        .container {
+            width: 70%;
+            /* border: 1px solid rgb(255, 0, 0); */
+
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .row>div {
+            width: 40%;
+            /* border: 1px solid rgb(0, 0, 0); */
+            display: flex;
+            align-items: center;
+        }
+
+        .row>div>div {
+            margin-right: 15px;
+            padding-top: 60px;
+        }
+
+        .row>div>div>div {
+            width: 100%;
+            display: flex;
+            margin-top: 27px;
+        }
+
+        div>img {
+            width: 33%;
+            height: 115px;
+        }
+
+        img+h4 {
+
+            margin-left: 26px;
+            color: #848485;
+        }
+
+        .service {
+            width: 95%;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0px;
+        }
+
+        .service>div {
+            width: 46%;
+            /* border: 1px solid green; */
+            
+            
+        }
+        .services {
+            width: 90%;  
+            padding: 0px 15px 0px 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-top: 0px;
+        }
+        .media body{
+            width: 90%;  
+        }
+        .icon{
+            width: 65px;
+            height: 45px;
+            font-size: 45px;
+            background-color: pink;
+            border-radius:50%;
+            padding:10px
+        }
+        </style>
+</head>
+
+<body>
+    <div id="navbar">
+        <div>
+            <h4>StudyLab</h4>
+        </div>
+        <div>
+            <P>Home</P>
+            <p class="active">About</p>
+            <p>Course</p>
+            <p>Instructor</p>
+            <P>Blog</P>
+            <p>Contact</p>
+        </div>
+    </div>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div>
+                    <div>
+                        <span>WELCOME TO STUDYLAB</span>
+                        <h2>We Are StudyLab An Online
+                            Learning Center</h2>
+                        <p>A small river named Duden flows by their place and supplies it
+                            with the necessary regelialia. It is a paradisematic country, in
+                            which roasted parts of sentences fly into your mouth.</p>
+                        <p>Far far away, behind the word mountains, far from the
+                            countries Vokalia and Consonantia, there live the blind texts.
+                            Separated they live in Bookmarksgrove right at the coast of the
+                            Semantics, a large language ocean.</p>
+                        <div>
+                            <img src="https://technext.github.io/studylab/images/about.jpg">
+                            <h4>Learn anything from StudyLab,
+                                Watch video</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="service">
+                    <div>
+                        <div class="services">
+                            <div class="icon"><i class="fa-solid fa-list-check"></i></div>
+                            <div class="media-body">
+                                <h3 class="heading">Top Quality Content</h3>
+                                <p>A small river named Duden flows by their place and supplies</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="services">
+                            <div class="icon"><i class="fa-solid fa-person-chalkboard"></i></div>
+                            <div class="media-body">
+                                <h3 class="heading">Highly Skilled Instructor</h3>
+                                <p>A small river named Duden flows by their place and supplies</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="services">
+                            <div class="icon"><i class="fa-solid fa-file-certificate"></i></div>
+                            <div class="media-body">
+                                <h3 class="heading">World Class &amp; Quiz</h3>
+                                <p>A small river named Duden flows by their place and supplies</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="services">
+                            <div class="icon"><i class="fa-solid fa-file-certificate"></i></div>
+                                <div class="media-body">
+                                    <h3 class="heading">Get Certified</h3>
+                                    <p>A small river named Duden flows by their place and supplies</p>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
