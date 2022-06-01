@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #continent_select,button{
+            display: flex;
+            justify-content:center;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <select id="continent_select">
+        <option value="ind"> India </option>
+        <option value="usa"> United States of America </option>
+        <option value="cna"> China </option>
+        <option value="nep"> Nepal </option>
+        <option value="aus"> Australia </option>
+        <option value="fnc"> France </option>
+        <option value="ger"> Germany </option>
+        <option value="sa"> South Africa</option>
+        <option value="nig"> Nigeria </option>
+        <option value="mex"> Mexico </option>
+        <option value="arg"> Argentina </option>
+        <option value="bra"> Brazil </option>
+        <option value="can"> Canada </option>
+        <option value="sin"> Singapore </option>
+        <option value="swe"> Sweden </option>
+        
+    </select>
+    <button onclick="find()" type="button">Find continent</button>
+</body>
+<script>
+    function find() {
+        let x = document.getElementById("continent_select").value;
+        switch (x) {
+            case "ind": alert("The continent is ASIA");
+            break;
+            case "usa": alert("The continent is North America");
+            break;
+            case "cna": alert("The continent is ASIA");
+            break;
+            case "nep": alert("The continent is ASIA");
+            break;
+            case "aus": alert("The continent is Australia");
+            break;
+            case "fnc": alert("The continent is Europe");
+            break;
+            case "ger": alert("The continent is Europe");
+            break;
+            case "sa": alert("The continent is Africa");
+            break;
+            case "nig": alert("The continent is Africa");
+            break;
+            case "mex": alert("The continent is North America");
+            break;
+            case "arg": alert("The continent is South America");
+            break;
+            case "bra": alert("The continent is South America");
+            break;
+            case "can": alert("The continent is North America");
+            break;
+            case "sin": alert("The continent is ASIA");
+            break;
+            case "se": alert("The continent is Europe");
+            break;
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mini Calculator</title>
+    <style>
+        *{
+            text-align: center;
+        }
+        div{
+            width: 40%;
+            margin: 0 auto;
+        }
+        button{
+            margin: 5px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="number" name="number" placeholder="enter 1st Number" id="n1">
+        <input type="number" name="number" placeholder="enter 2nd Number" id="n2">
+        <hr />
+        <div>
+            <button onclick="add()">Add</button>
+            <button onclick="sub()">Subtract</button>
+            <button onclick="mul()">Multiply</button>
+            <button onclick="div()">Divide</button>
+        </div>
+        
+    </div>
+    
+    <script type="text/javascript">
+        function add() {
+            // Change the content of h1 to your first name
+            let value1 = document.getElementById("n1").value;
+            let value2 = document.getElementById("n2").value;
+            alert(+(value1) + +(value2))
+        }
+
+        function sub() {
+            // Change the content of div to your last name
+            let value1 = document.getElementById("n1").value;
+            let value2 = document.getElementById("n2").value;
+            alert(value1 - value2)
+        }
+
+        function mul() {
+            // Change the content of p to your full name (firstname - lastname)
+            let value1 = document.getElementById("n1").value;
+            let value2 = document.getElementById("n2").value;
+            alert(value1 * value2)
+        }
+
+        function div() {
+            // reset the firstname, lastname, and fullname to empty values
+            let value1 = document.getElementById("n1").value;
+            let value2 = document.getElementById("n2").value;
+            alert(value1 / value2)
+        }
+    </script>
+</body>
+
+</html>

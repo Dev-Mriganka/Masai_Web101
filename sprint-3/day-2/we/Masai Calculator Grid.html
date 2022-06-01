@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masai Calculator Grid</title>
+    <style>
+        h1 {
+            font-size: 60px;
+            text-align: center;
+            padding-bottom: 30px;
+            color: #008080;
+        }
+
+        #container {
+            height: 450px;
+            width: 470px;
+            margin: auto;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            padding-bottom: 80px;
+            padding-top: 50px;
+        }
+
+        #display {
+            height: 18%;
+            width: 75%;
+            margin: auto;
+            margin-top: 20px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            border-radius: 10px;
+            font-size: 30px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #keys {
+            width: 75%;
+            height: 85%;
+            margin: auto;
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 80px);
+            gap: 10px;
+        }
+
+        #keys>div {
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        #keys>div:hover {
+            background-color: pink;
+        }
+
+        .red {
+            background-color: red;
+            color: white;
+        }
+
+        .black {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Masai Calculator</h1>
+    <div id="container">
+        <div id="display"></div>
+        <div id="keys">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div class="black">+</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div class="black">-</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div class="black">*</div>
+            <div class="red">C</div>
+            <div>0</div>
+            <div class="black">=</div>
+            <div class="black">/</div>
+        </div>
+    </div>
+</body>
+
+<script>
+    let keys = document.querySelectorAll("#keys > div")
+
+    for (let i = 0; i < keys.length; i++) {
+        keys[i].addEventListener("click", myCalculator);
+    }
+
+    let bag = "";
+
+    function myCalculator() {
+        var targetNumber = event.target.innerText;
+        if (targetNumber == "C") {
+            bag = "";
+            document.querySelector("#display").innerText = ""
+        } else if (targetNumber == "=") {
+            let res = eval(bag)
+            document.querySelector("#display").innerText = res;
+        } else {
+            bag = bag + targetNumber
+            document.querySelector("#display").innerText = bag
+        }
+    }
+</script>
+</html>

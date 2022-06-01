@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIN & MAX LEADERBOARD</title>
+    <style>
+        #minmax {
+            display: flex;
+            width: 400px;
+            margin: auto;
+            justify-content: space-between;
+        }
+
+        .box {
+            width: 140px;
+            height: 100px;
+            background-color: #FE0000;
+            border: 2px solid black;
+            margin-bottom: 0px;
+        }
+
+        .green {
+            background-color: #01AB01;
+        }
+
+        #minmax div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+        }
+
+        p {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        p:last-child {
+            margin-top: 4px;
+        }
+
+        #display {
+            width: 310px;
+            height: 100px;
+            margin: 30px auto;
+            background-color: gray;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        #score {
+            display: grid;
+            width: 300px;
+            margin: auto;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 70px 70px 70px 70px 70px;
+            gap: 25px;
+            grid-template-areas:
+                "bb cc dd"
+                "ee ff gg"
+                "hh ii jj"
+                ". kk ."
+                "ll ll ll";
+        }
+
+        #score div {
+            border: 2px solid black;
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+        }
+
+        #score div:nth-child(1) {
+            background-color: #678101;
+            grid-area: bb;
+        }
+
+        #score div:nth-child(2) {
+            background-color: #FE6700;
+            grid-area: cc;
+        }
+
+        #score div:nth-child(3) {
+            background-color: #678101;
+            grid-area: dd;
+        }
+
+        #score div:nth-child(4) {
+            background-color: #FE6700;
+            grid-area: ee;
+        }
+
+        #score div:nth-child(5) {
+            background-color: #FE6700;
+            grid-area: ff;
+        }
+
+        #score div:nth-child(6) {
+            background-color: #FE6700;
+            grid-area: gg;
+        }
+
+        #score div:nth-child(7) {
+            background-color: #678101;
+            grid-area: hh;
+        }
+
+        #score div:nth-child(8) {
+            background-color: #FE6700;
+            grid-area: ii;
+        }
+
+        #score div:nth-child(9) {
+            background-color: #678101;
+            grid-area: jj;
+        }
+
+        #score div:nth-child(10) {
+            background-color: #810064;
+            grid-area: kk;
+            color: white;
+
+        }
+
+        #score div:nth-child(11) {
+            background-color: black;
+            grid-area: ll;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="minmax">
+        <div>
+            <p class="box">0</p>
+            <p>MIN</p>
+        </div>
+        <div>
+            <p class="box green">0</p>
+            <p>MAX</p>
+        </div>
+    </div>
+    <div id="display">#</div>
+    <div id="score">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>0</div>
+        <div>ENTER</div>
+    </div>
+</body>
+<script>
+    let keys = document.querySelectorAll("#score > div")
+
+    for (let i = 0; i < keys.length; i++) {
+        keys[i].addEventListener("click", myCalculator);
+    }
+    let bag = "";
+
+    function myCalculator() {
+        var targetNumber = event.target.innerText;
+
+        if (targetNumber == "ENTER") {
+            let num = bag;
+            bag = "";
+            document.querySelector("#display").innerText = "#"
+            let temp = document.querySelector(".box").innerText;
+            let temp1 = document.querySelector(".green").innerText;
+            console.log(num)
+            if (temp == 0 || temp > num) {
+                document.querySelector(".box").innerText = num;
+            }else{
+                document.querySelector(".box").innerText = temp;
+            }
+            if (temp == 0 || temp1 < num) {
+                document.querySelector(".green").innerText = num;
+            } else{
+                document.querySelector(".green").innerText = temp1;
+            }
+            console.log(temp,temp1)
+        } else {
+            bag = bag + targetNumber
+            document.querySelector("#display").innerText = bag
+        }
+    }
+</script>
+
+</html>
