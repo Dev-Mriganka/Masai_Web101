@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>U2C3 Mock</title>
+    <style>
+      #report {
+        margin-top: 50px;
+        display:grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: auto;
+        gap: 30px;
+      }
+      #report>div{
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        padding: 15px 20px;
+      }
+
+      @media all and (min-width:768px) and (max-width:1024px){
+        #report {
+        display:grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        gap: 25px;
+        }
+      }
+      @media all and (min-width:520px) and (max-width:768px){
+        #report {
+        display:grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        gap: 20px;
+        }
+      }
+      @media all and (min-width:0px) and (max-width:519px){
+      #report {
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      gap: 15px;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <select id="month">
+        <option value="January">JANUARY</option>
+        <option value="February">FEB</option>
+        <option value="MARCH">MARCH</option>
+        <option value="APRIL">APRIL</option>
+        <option value="MAY">MAY</option>
+        <option value="JUNE">JUNE</option>
+        <option value="JULY">JULY</option>
+        <option value="AUGUST">AUGUST</option>
+        <option value="SEPETEMBER">SEPETEMBER</option>
+        <option value="OCTOBER">OCTOBER</option>
+        <option value="NOVEMBER">NOVEMBER</option>
+        <option value="DECEMBER">DECEMBER</option>
+      </select>
+
+      <input id="income" type="number" placeholder="Enter Income" />
+
+      <input id="expense" type="number" placeholder="Enter expense" />
+
+      <input type="submit" />
+    </form>
+
+    <div id="report">
+          <!-- Append your cards here -->
+    </div>
+  </body>
+</html>
+
+<script>
+  document.querySelector("form").addEventListener("submit", func)
+
+  function func() {
+    event.preventDefault();
+    let div = document.createElement("div");
+
+    let month = document.querySelector("#month").value
+    let income = document.querySelector("#income").value
+    let expense = document.querySelector("#expense").value
+    console.log(income, expense)
+    let h1 = document.createElement("h1");
+    h1.innerText= month;
+
+    let p1 = document.createElement("p");
+    p1.innerText= income;
+
+    let p2 = document.createElement("p");
+    p2.innerText= expense;
+
+    let p3 = document.createElement("h3");
+    if(+(income) < +(expense)){
+      p3.innerText= "DEBT";
+      p3.style.color = "red";
+    }else if(+(income) > +(expense)){
+      p3.innerText= "SAVE";
+      p3.style.color = "green";
+    }else{
+      p3.innerText= "BREAKEVEN";
+      p3.style.color = "orange";
+    }
+
+    let btn = document.createElement("button");
+    btn.innerText = "DELETE";
+    // td9.style.backgroundColor = "red"
+    // td9.style.color = "white"
+    btn.addEventListener("click", deleteIt)
+    function deleteIt(event) {
+    var x = event.target.parentNode
+
+    x.remove();
+    }
+    
+    // console.log(month, income, expense)
+    div.append(h1, p1, p2, p3, btn)
+    document.querySelector("#report").append(div)
+  }
+  
+</script>

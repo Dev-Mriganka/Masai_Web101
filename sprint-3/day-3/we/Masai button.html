@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masai Button</title>
+    <style>
+        body {
+            width: 850px;
+            display: flex;
+            margin: 100px auto;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        button {
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 20px;
+            border: 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+<script>
+    var btnArr = [{
+            name: 'Primary',
+            color: '#fff',
+            bgColor: '#027BFF'
+        },
+        {
+            name: 'Secondary',
+            color: 'white',
+            bgColor: '#6D757C'
+        },
+        {
+            name: 'Success',
+            color: 'white',
+            bgColor: '#29A645'
+        },
+        {
+            name: 'Danger',
+            color: 'white',
+            bgColor: '#DC3444'
+        },
+        {
+            name: 'Warning',
+            color: 'black',
+            bgColor: '#FEC009'
+        },
+        {
+            name: 'Info',
+            color: 'white',
+            bgColor: '#16A1B8'
+        },
+        {
+            name: 'Light',
+            color: 'black',
+            bgColor: '#F8F8FB'
+        },
+        {
+            name: 'Dark',
+            color: 'white',
+            bgColor: '#353B3E'
+        },
+        {
+            name: 'Link',
+            color: '#0D7DFE',
+            bgColor: '#F8F8FB'
+        },
+    ];
+
+    btnArr.forEach(function (el) {
+        let btn = document.createElement("button");
+        btn.innerText = el.name;
+        btn.style.backgroundColor = el.bgColor;
+        btn.style.color = el.color;
+        document.querySelector("body").appendChild(btn);
+    });
+</script>
+
+</html>

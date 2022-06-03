@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registration</title>
+</head>
+
+<body>
+    <form>
+        <input type="text" name="name" id="name" placeholder="Name">
+        <input type="number" name="age" id="age" placeholder="Age">
+        <select id="gender">
+            <option value="">Gender</option>
+            <option value="male">M</option>
+            <option value="female">F</option>
+        </select>
+        <input type="text" name="email" id="email" placeholder="Email">
+        <input type="number" name="mobile" id="mobile" placeholder="Mobile">
+        <input type="submit" value="submit">
+    </form>
+
+    <script type="text/javascript">
+        document.querySelector("form").addEventListener("submit", myFunc)
+
+        function myFunc(event) {
+            event.preventDefault();
+
+            let name = document.querySelector("#name").value
+            let age = document.querySelector("#age").value
+            let gender = document.querySelector("#gender").value
+            let email = document.querySelector("#email").value
+            let mobile = document.querySelector("#mobile").value
+
+            let obj={"name":name}
+            let obj1={"age":age}
+            let obj2={"gender":gender}
+            let obj3={"email":email}
+            let obj4={"mobile":mobile}
+
+            let arr=[]
+            arr.push(obj)
+            arr.push(obj1)
+            arr.push(obj2)
+            arr.push(obj3)
+            arr.push(obj4)
+
+            console.log(arr)
+        }
+    </script>
+</body>
+
+</html>
