@@ -1,59 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home Page</title>
-    <link rel="stylesheet" href="index.css" />
-  </head>
 
-  <body>
-    <div id="links">
-      <div><a href="index.html">Home</a></div>
-      <div><a href="applied.html">Applied Jobs</a></div>
-      <div><a href="bookmark.html">Bookmarks</a></div>
-    </div>
-    <form action="" id="form">
-      <h2>Enter Your Application Details</h2>
-      <input placeholder="Enter Name" id="name" name="name" type="text" />
-      <input placeholder="Enter email" type="email" name="email" id="email" />
-      <select name="role" id="role">
-        <option value="FSD">FSD</option>
-        <option value="Backend">Backend</option>
-        <option value="Frontend">Frontend</option>
-      </select>
-      <input id="salary"
-        type="number"
-        placeholder="Enter expected salary in lakhs per annum "
-      />
-      <input id="submit" type="submit" name="submit" value="Submit" />
-    </form>
-  </body>
-  <script>
-    //you need to code here
-    document.querySelector("form").addEventListener("submit", jobApp);
-    let temp = JSON.parse(localStorage.getItem('jobApps'));
-    let applied = (temp||[]);
-    // displayTable(quesArr)
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Page</title>
+  <link rel="stylesheet" href="index.css" />
+  <style>
+    
+  </style>
+</head>
+  
+<body>
+  <div id="links">
+    <div><a href="index.html">Home</a></div>
+    <div><a href="applied.html">Applied Jobs</a></div>
+    <div><a href="bookmark.html">Bookmarks</a></div>
+  </div>
+  <form action="" id="form">
+    <h2>Enter Your Application Details</h2>
+    <input placeholder="Enter Name" id="name" name="name" type="text" />
+    <input placeholder="Enter email" type="email" name="email" id="email" />
+    <select name="role" id="role">
+      <option value="FSD">FSD</option>
+      <option value="Backend">Backend</option>
+      <option value="Frontend">Frontend</option>
+    </select>
+    <input id="salary" type="number" placeholder="Enter expected salary in lakhs per annum " />
+    <input id="submit" type="submit" name="submit" value="Submit" />
+  </form>
+</body>
+<script>
+  //you need to code here
 
-    function jobApp(event) {
+  document.querySelector("form").addEventListener("submit", jobApp);
+  let applied = JSON.parse(localStorage.getItem('jobApps')) || [];
+  // displayTable(quesArr)
+
+  function jobApp(event) {
     event.preventDefault();
 
-
     let application = {
-    name: document.querySelector("#name").value,
-    email: document.querySelector("#email").value,
-    role: document.querySelector("#role").value,
-    salary: document.querySelector("#salary").value,
+      name: document.querySelector("#name").value,
+      email: document.querySelector("#email").value,
+      role: document.querySelector("#role").value,
+      salary: document.querySelector("#salary").value,
     };
-    // console.log(quesObj);
+
     applied.push(application);
+    localStorage.setItem("jobApps", JSON.stringify(applied))
+  }
+</script>
 
-    // displayTable(quesArr)
-    let store = localStorage.setItem("jobApps", JSON.stringify(applied))
-    }
-
-    
-  </script>
 </html>

@@ -8,18 +8,37 @@
   <title>Database</title>
   <link rel="stylesheet" href="commonStyles.css" />
 </head>
-  <style>
-    div>tr>td{
-      cursor: pointer;
-    }
-  </style>
+<style>
+  tbody>tr>td:last-child {
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+  }
+</style>
+
 <body>
   <div id="links">
     <div><a href="index.html">Home</a></div>
     <div><a href="applied.html">Applied Jobs</a></div>
     <div><a href="bookmark.html">Bookmarks</a></div>
   </div>
-
+  <select id="sortNames" onchange="handleNameSort()">
+    <option value="">Sort By Name</option>
+    <option value="Ascending">Ascending</option>
+    <option value="Descending">Descending</option>
+  </select>
+  <select id="filter">
+    <option value="">Filter By Role</option>
+    <option value="Backend">Backend</option>
+    <option value="Frontend">Frontend</option>
+    <option value="FSD">FSD</option>
+  </select>
+  <select id="sortSalary" onchange="handleSalarySort()">
+    <option value="">Sort By Salary</option>
+    <option value="Ascending">Ascending</option>
+    <option value="Descending">Descending</option>
+  </select>
   <main>
     <table>
       <thead>
@@ -39,30 +58,95 @@
 </body>
 <script>
   //you need to code here
+  let appFmLs = JSON.parse(localStorage.getItem('jobApps'));
+  let bookmarkArr = JSON.parse(localStorage.getItem('bookmarkApp')) || []
 
-  let temp = JSON.parse(localStorage.getItem('jobApps'));
-  let applied = (temp || []);
-  displayTable(applied)
+  document.querySelector("#filter").addEventListener("change", handleFilter);
 
-  function displayTable(quesArr) {
+  function handleFilter() {
+    let selected = document.querySelector("#filter").value;
+    console.log(selected)
+    let filteredList = appFmLs.filter(el => {
+      return el.role == selected;
+    });
+    displayTable(filteredList)
+  }
+
+  function handleSalarySort() {
+    let selected = document.querySelector("#sortSalary").value;
+    // console.log(selected)
+    if (selected == "Ascending") {
+      appFmLs.sort(function (a, b) {
+        if (a.salary < b.salary) return -1;
+        if (a.salary > b.salary) return 1;
+        return 0;
+      })
+      displayTable(appFmLs)
+    }
+    if (selected == "Descending") {
+      appFmLs.sort(function (a, b) {
+        if (a.salary < b.salary) return 1;
+        if (a.salary > b.salary) return -1;
+        return 0;
+      })
+      displayTable(appFmLs)
+    }
+  }
+
+  function handleNameSort() {
+    let selected = document.querySelector("#sortNames").value;
+    // console.log(selected)
+    if (selected == "Ascending") {
+      appFmLs.sort(function (a, b) {
+        if (a.name < b.name) return -1;
+        if (a.name > b.name) return 1;
+        return 0;
+      })
+      displayTable(appFmLs)
+    }
+    if (selected == "Descending") {
+      appFmLs.sort(function (a, b) {
+        if (a.name < b.name) return 1;
+        if (a.name > b.name) return -1;
+        return 0;
+      })
+      displayTable(appFmLs)
+    }
+  }
+
+  displayTable(appFmLs)
+
+  function displayTable(arr) {
     document.querySelector("tbody").innerText = ""
-    quesArr.forEach(function (el) {
+    arr.forEach(function (el) {
       let tr = document.createElement("tr");
+
       let td1 = document.createElement("td");
       td1.innerText = el.name
+
       let td2 = document.createElement("td");
       td2.innerText = el.email
+
       let td3 = document.createElement("td");
       td3.innerText = el.role
+
       let td4 = document.createElement("td");
       td4.innerText = el.salary
+
       let td5 = document.createElement("td");
-        td5.innerText = "Bookmark";
-        td5.addEventListener("submit", jobApp);
+      td5.innerText = "Bookmark";
+      td5.addEventListener("click", function () {
+        bookmark(el)
+      });
 
       tr.append(td1, td2, td3, td4, td5)
       document.querySelector("tbody").appendChild(tr)
     })
+  }
+
+  function bookmark(el) {
+    bookmarkArr.push(el)
+    localStorage.setItem("bookmarkApp", JSON.stringify(bookmarkArr))
   }
 </script>
 
