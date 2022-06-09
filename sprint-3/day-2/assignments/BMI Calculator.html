@@ -55,13 +55,13 @@
         let res = eval((kgs * 10000) / (cms * cms))
         res = Math.floor(res * 100) / 100
         if (res <= 18.40) {
-            document.querySelector("#bmi p").innerText = "Your BMI is " + res + " which means You are Underweight"
+            document.querySelector("#bmi>p").innerText = "Your BMI is " + res + " which means You are Underweight"
         } else if (res >= 18.40 && res <= 24.9) {
-            document.querySelector("#bmi p").innerText = "Your BMI is" + res + " which means You are Normal Weight"
+            document.querySelector("#bmi>p").innerText = "Your BMI is" + res + " which means You are Normal Weight"
         } else if (res >= 25.40 && res <= 29.9) {
-            document.querySelector("#bmi p").innerText = "Your BMI is " + res + " which means You are Overweight"
+            document.querySelector("#bmi>p").innerText = "Your BMI is " + res + " which means You are Overweight"
         } else {
-            document.querySelector("#bmi p").innerText = "Your BMI is " + res + " which means You are Obese"
+            document.querySelector("#bmi>p").innerText = "Your BMI is " + res + " which means You are Obese"
         }
     }
 </script>

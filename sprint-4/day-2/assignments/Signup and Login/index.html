@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <title>Home</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        #navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 20px;
+            background-color: #1d2939;
+            color: white;
+            width: 96%;
+            margin: 20px auto;
+            border-radius: 20px;
+        }
+
+        #nav {
+            margin-right: 50px;
+        }
+
+        #navbar div:last-of-type {
+            display: flex;
+            align-items: center;
+            gap: 70px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        #mens,
+        #womens {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            padding: 20px;
+        }
+
+        p {
+            font-weight: 600;
+            margin: 10px 0px;
+        }
+
+        button {
+        font-weight: 600;
+        margin: 10px 0px;
+        padding: 4px 7px ;
+        }
+        button:hover {
+        background-color:#1d2939;
+        color: azure;
+        cursor: pointer;
+        }
+
+        h1 {
+            font-size: 30px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #navbar>div>a {
+        display: flex;
+        }
+
+        #navbar>div>a>img {
+        width: 30%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="navbar">
+        <div>
+            <a href="index.html"">
+            <img src=" https://www.freepnglogos.com/uploads/reebok-logo-png/logo-reebok-white-png-9.png" alt="">
+            </a>
+        </div>
+        <div id="nav">
+            <h3> <a href="mens.html">Men</a> </h3>
+            <h3> <a href="women.html">Women</a> </h3>
+            <h3> <a href="signin.html">Sign In</a> </h3>
+            <h3> <a href="signup.html">Sign Up</a> </h3>
+            <h3> <a href="signup.html">Cart</a> </h3>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    const h1 = document.createElement('h1');
+    h1.innerHTML = "For more Men's collections go to mens section"
+    document.body.appendChild(h1);
+
+    let mensData = [{
+            image_url: "https://content.shop4reebok.com/static/Product-EX4285/reebok_EX4285_1.jpg.plp ",
+            name: "MEN'S REEBOK RUNNING GENESIS RUNNER SHOES ",
+            price: 1620,
+            strikedoffprice: 3599,
+        },
+        {
+            image_url: "https://content.shop4reebok.com/static/Product-FV9519/MEN_SWIM_SLIPPERS_FV9519_1.jpg.plp ",
+            name: "MEN'S REEBOK SWIM RUSSLE FLIP SLIPPERS ",
+            price: 599,
+            strikedoffprice: 999,
+        },
+        {
+            image_url: "https://content.shop4reebok.com/static/Product-FW0318/reebok_FW0318_1.jpg.plp ",
+            name: " MEN'S REEBOK RUNNING TREND RUNNER SHOES",
+            price: 1575,
+            strikedoffprice: 3499,
+        },
+        {
+            image_url: "https://content.shop4reebok.com/static/Product-H00024/reebok_H00024_1.jpg.plp ",
+            name: "UNISEX REEBOK RUNNING ZIG KINETICA II SHOES ",
+            price: 9999,
+            strikedoffprice: 12000,
+        }
+    ];
+
+
+    const div1 = document.createElement('div');
+    div1.setAttribute('id', 'mens');
+
+    mensData.forEach(el => {
+
+        let div = document.createElement("div");
+
+        let img = document.createElement("img");
+        img.setAttribute("src", el.image_url)
+        let p1 = document.createElement("p")
+        p1.innerText = el.name
+        let p2 = document.createElement("p")
+        p2.innerText = "₹" + el.price
+        let p3 = document.createElement("p")
+        let s = document.createElement("s")
+        s.innerText = "₹" + el.strikedoffprice
+        p3.append(s)
+
+        let button = document.createElement("button")
+        button.innerText = "Add to Cart"
+
+        div.append(img, p1, p2, p3, button)
+        div1.append(div)
+    })
+    document.querySelector("body").appendChild(div1)
+
+    const h12 = document.createElement('h1');
+    h12.innerHTML = "For more Women's collections go to mens section"
+    document.body.appendChild(h12);
+
+
+    let womenData = [{
+            image_url: "https://content.shop4reebok.com/static/Product-GL5609/reebok_GL5609_1.jpg.plp",
+            name: "UNISEX REEBOK SHOW SHOES",
+            price: 1249,
+            strikedoffprice: 1489,
+        }
+
+        ,
+        {
+            image_url: "https://content.shop4reebok.com/static/Product-GK6777/reebok_GK6777_1.jpg.plp",
+            name: "WOMEN'S CLASSIC REEBOK PANTS",
+            price: 1459,
+            strikedoffprice: 1235,
+        }
+
+        ,
+        {
+            image_url: "https://content.shop4reebok.com/static/Product-GT2355/reebok_GT2355_1.jpg.plp",
+            name: "WOMEN'S REEBOK RUNNING RUN ESSENTIALS SHORT SLEEVE GRAPHIC",
+            price: 849,
+            strikedoffprice: 2599,
+        }
+
+        ,
+        {
+            image_url: "https://content.shop4reebok.com/static/Product-GM3404/adidas_GM3404_1.jpg.plp",
+            name: "WOMEN'S REEBOK TRAINING WOR MESH TIGHTS",
+            price: 1550,
+            strikedoffprice: 2599,
+        }
+    ];
+
+
+
+    const div2 = document.createElement('div');
+    div2.setAttribute('id', 'womens');
+
+    womenData.forEach(el => {
+
+        let div = document.createElement("div");
+
+        let img = document.createElement("img");
+        img.setAttribute("src", el.image_url)
+        let p1 = document.createElement("p")
+        p1.innerText = el.name
+        let p2 = document.createElement("p")
+        p2.innerText = "₹" + el.price
+        let p3 = document.createElement("p")
+        let s = document.createElement("s")
+        s.innerText = "₹" + el.strikedoffprice
+        p3.append(s)
+
+        let button = document.createElement("button")
+        button.innerText = "Add to Cart"
+
+        div.append(img, p1, p2, p3, button)
+        div2.append(div)
+    })
+    document.querySelector("body").appendChild(div2)
+</script>

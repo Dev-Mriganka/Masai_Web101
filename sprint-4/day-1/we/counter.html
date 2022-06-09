@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        body {
+            text-align: center;
+            margin: auto;
+        }
+
+        button {
+            padding: 10px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        h1+button {
+            background-color: green;
+        }
+
+        button+button {
+            background-color: chocolate;
+            color: white;
+        }
+
+        h1 {
+            width: 10%;
+            margin: 20px auto;
+            padding: 10px 0px;
+            background-color: black;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1></h1>
+    <button>Increment</button>
+    <button>Decrement</button>
+</body>
+
+</html>
+<script>
+    let counter = localStorage.getItem("localCounter") || 0;
+
+    document.querySelector("h1").innerText = counter;
+
+    document.querySelector("h1+button").addEventListener("click", incFunc)
+
+
+    function incFunc() {
+        counter++
+        document.querySelector("h1").innerText = counter
+        localStorage.setItem("localCounter", counter);
+    }
+
+    document.querySelector("button+button")
+        .addEventListener("click", decFunc)
+
+    function decFunc() {
+        counter--;
+        document.querySelector("h1").innerText = counter;
+        localStorage.setItem("localCounter", counter);
+    }
+</script>

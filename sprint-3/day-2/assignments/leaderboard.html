@@ -184,18 +184,17 @@
             document.querySelector("#display").innerText = "#"
             let temp = document.querySelector(".box").innerText;
             let temp1 = document.querySelector(".green").innerText;
+            temp = +(temp)
+            temp1 = +(temp1)
+            num = +(num)
             console.log(num)
             if (temp == 0 || temp > num) {
                 document.querySelector(".box").innerText = num;
-            }else{
-                document.querySelector(".box").innerText = temp;
             }
             if (temp == 0 || temp1 < num) {
                 document.querySelector(".green").innerText = num;
-            } else{
-                document.querySelector(".green").innerText = temp1;
             }
-            console.log(temp,temp1)
+            console.log(temp, temp1)
         } else {
             bag = bag + targetNumber
             document.querySelector("#display").innerText = bag

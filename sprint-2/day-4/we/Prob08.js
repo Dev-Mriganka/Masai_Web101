@@ -9,7 +9,7 @@ let users = [
 ];
 
 let res = users
-  .filter(el => el.place=="Banglore")
-  .map(el => el.firstName+" "+el.lastName)
+  .filter(el => el.place == "Banglore")
+  .map(el => el.firstName + " " + el.lastName)
 
 console.log(res)

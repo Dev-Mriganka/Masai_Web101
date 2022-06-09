@@ -1,0 +1,87 @@
+/* Fill CSS here */
+h1{
+    margin: 20px auto 50px;
+    color: #0567AC;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: underline;
+    word-spacing: 10px;
+}
+div{
+    display: flex;
+    justify-content: space-around;  
+    /* margin: auto 50px; */
+}
+
+form{
+    width: 25%;
+}
+form input{
+    width: 100%;
+    padding: 10px;
+    border: 0.5px solid;
+    border-radius: 10px;
+    margin: 10px 0px;
+}
+label{
+    margin: 10px;
+    font-size: 15px;
+}
+form select{
+    width: 105%;
+    padding: 10px;
+    border: 0.5px solid;
+    border-radius: 10px;
+    margin: 10px 0px;
+}
+
+table{
+    width: 60%;
+}
+
+input[type="submit"]{
+    width: 105%;
+    background-color: #0567AC;
+    color: #fff;
+    font-size: 15px;
+    border: none;
+}
+/* input[type="submit"]:hover{
+    background-color: #0567AC;
+    color: re;
+} */
+th{
+    height: 100%;
+    background-color: #0567AC;
+    color: #fff;
+    display: flex;
+    align-items:    center;
+    justify-content: center;
+}
+
+tbody tr{
+    display: grid;
+    grid-template-columns: 170px 120px 120px 150px 300px 150px 100px 100px;
+    grid-template-rows: 50px;
+    text-align: center;
+    align-items: center;
+    gap: 0px 2px;
+}
+
+thead tr{
+    display: grid;
+    grid-template-columns: 170px 120px 120px 150px 300px 150px 100px 100px;
+    grid-template-rows: 50px;
+    text-align: center;
+    align-items: center;
+    gap: 0px 2px;
+}
+
+/* tr > tr:last-child :hover{
+    background-color: #0567AC;
+    color: red;
+} */
+
+/* table, th, td {
+    border: 0.5px solid;
+} */
